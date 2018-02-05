@@ -1,6 +1,6 @@
-require_dependency 'issues_helper'
+require_dependency 'queries_helper'
 
-module IssuesHelperPatch
+module QueriesHelperPatch
   def self.included(base)
     base.send(:include, InstanceMethods)
     base.class_eval do
