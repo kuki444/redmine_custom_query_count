@@ -11,6 +11,6 @@ Redmine::Plugin.register :redmine_custom_query_count do
   name 'Redmine Custom Query Count plugin'
   author 'Norio Kuki'
   description 'チケット一覧のカスタムクエリ一覧にクエリに該当するチケット数を表示する'
-  version '0.1.0'
+  version '0.4.0'
   url 'https://github.com/kuki444/redmine_custom_query_count'
 end
