@@ -20,11 +20,19 @@ module QueriesHelperPatch
             css << ' selected'
             clear_link += link_to_clear_query
           end
-          content_tag('li',
-                      link_to(query.name + "(" + query.issue_count.to_s + ")",
-                              url_params.merge(:query_id => query),
-                              :class => css) +
-                              clear_link.html_safe)
+          if controller_name == 'issues'
+            content_tag('li',
+                        link_to(query.name + "(" + query.issue_count.to_s + ")",
+                                url_params.merge(:query_id => query),
+                                :class => css) +
+                                clear_link.html_safe)
+          else
+            content_tag('li',
+                        link_to(query.name,
+                                url_params.merge(:query_id => query),
+                                :class => css) +
+                                clear_link.html_safe)
+          end
         end.join("\n").html_safe,
         :class => 'queries'
       ) + "\n"
